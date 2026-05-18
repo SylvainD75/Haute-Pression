@@ -804,7 +804,7 @@ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e 
 
 // ── Algorithme SILCA ────────────────────────────────────────────────────────
 function calcK1(terrain) {
-  return { route: 261, gravel: 167, engage: 170 }[terrain];
+  return { route: 261, gravel: 167, engage: 140 }[terrain];
 }
 function calcCPP(K, width, diameter) {
   const num = ((-0.00006*width**3)+(0.0079*width**2)-(0.4102*width)+12.725)*(-226.44);
@@ -819,7 +819,7 @@ function calcSpeedCoeff(mph=20) {
 function calcWeightDist(velo) {
   return { road:[0.45,0.55], gravel:[0.47,0.53] }[velo];
 }
-const TIRE_COEFF = { 'hp-tl':0.91, 'std-tl':0.94, 'butyl':0.97 };
+const TIRE_COEFF = { 'hp-tl':0.91, 'std-tl':0.94, 'butyl':0.92 };
 
 function calcPressure({ poids_velo, poids_cycliste, largeur, diametre, velo, pneu, terrain }) {
   const poids_lbs = (poids_velo + poids_cycliste) * 2.20462;
